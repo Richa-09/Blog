@@ -1,0 +1,19 @@
+{% extends 'posts/layout.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container top">
+    <span id="blog">&lt;BLOG&gt;</span><br><span id="sign">by Richa Singh</span>
+</div>
+<div class="container content">
+    build a life.<br>
+    Don't live one.
+</div>
+{% endblock %}

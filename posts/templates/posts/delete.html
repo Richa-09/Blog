@@ -1,0 +1,25 @@
+{% extends 'posts/layout.html' %}
+
+{% load static %}
+
+{% block title %}Delete Post{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron pop">
+    <form action="{% url 'done' k=post.id %}" method="POST">
+        {% csrf_token %}
+       <div class="form-group">
+         <span class="warning">Do you really want to delete this post?</span><br>
+         Clicking on yes will permanently delete the post.
+         <a class="btn btn-lg btn-info" role="button" href="{% url 'blog' k=post.id %}">Cancel</a>
+         <button type="submit" class="btn btn-lg btn-danger">Yes</button>
+       </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+
+#blog{
+    font-size: 15rem;
+    letter-spacing: 2rem;
+    text-shadow: 1rem 1rem 1rem grey; 
+    font-family: 'Anton', sans-serif;
+}
+
+#sign{
+    font-family: 'Dancing Script', cursive;
+    float: right;
+    font-size: 3rem;
+    font-weight: 100;
+    padding-right: 30rem;
+    line-height: 0rem;
+}
+
+.top{
+    margin-left: 12rem;
+}
+
+.content{
+    color: #10415f;
+    max-width: 50%;
+    float: left;
+    font-size: 5rem;
+    font-family: 'Gloria Hallelujah', cursive;
+    padding-top: 10rem;
+    padding-left: 10rem;
+}

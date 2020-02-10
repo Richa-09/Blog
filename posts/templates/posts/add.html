@@ -1,0 +1,46 @@
+{% extends 'posts/layout.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/add.css' %}">
+{% endblock %}
+
+{% block title %}New Post{% endblock %}
+
+{% block content %}
+<div class="container create">
+   <form action="{% url 'create' %}" method="POST">
+     {% csrf_token %}
+    <div id="hey">Your words matter!</div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="name" class="form-control" id="name" name="name" placeholder="Full Name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="email address">
+    </div>
+    <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject of the post">
+      </div>
+    <div class="form-group">
+      <label for="content">Write your post here</label>
+      <textarea class="form-control" id="content" name="content" rows="6"></textarea>
+    </div>
+    <button type="submit" class="btn btn-info">Post</button>
+  </form>
+  <div class="container" style="max-width: 700px;">
+    {% if messages %}
+      {% for message in messages %}
+        <div role="alert" class="alert {% if message.tags == 'success' %}alert-success{% endif %}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

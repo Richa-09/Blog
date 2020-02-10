@@ -1,0 +1,36 @@
+{% extends 'posts/layout.html' %}
+
+{% load static %}
+
+{% block title %}Posts{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/show.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container response">
+    <h3>Blog Posts</h3>
+    <hr>
+
+    {% for b in blog %}
+    <div class="container bg-light mb-5 blog">
+        <div class="row align-items-center detail">
+             <div class="col-9">
+                 <h2>{{ b.subject}}</h2><br>
+                 <span class="person">{{ b.date }}</span><br>
+                 <span class="person">By:{{ b.name }}</span><br>
+                 <span class="person">Email:{{ b.email }}</span><br>
+                 {{ b.content| truncatewords:50 }}<br>
+            </div>
+            <div class="col-3">
+                 <a class="btn btn-primary" role="button" href="{% url 'blog' k=b.id %}">Read More</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+.response{
+    max-width: 50%;
+    float: left;
+    padding-left: 5rem;
+    padding-top: 2rem;
+}
+
+h3{
+    font-size: 5rem;
+    font-family: 'Lobster', cursive;
+}
+
+h2{
+    line-height: 0rem;
+}
+
+.detail
+{
+    padding-top: 2rem;
+    padding-left:1rem;
+    padding-bottom: 1rem;
+    word-wrap: break-word;
+}
+
+.person{
+    color: gray;
+}
+
+.blog{
+    border: solid black 0.5px;
+    border-radius: 1.2rem;
+}
+
+a{
+    float: right;
+}

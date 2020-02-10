@@ -1,0 +1,24 @@
+.pop{
+    max-width: 50%;
+    float: left;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    margin-top: 10rem;
+    margin-left:8rem
+}
+
+.warning{
+    font-size: 3rem;
+}
+
+button{
+    float: right;
+    margin-top: 2rem;
+    margin-left:10rem;
+}
+
+a{
+    float: right;
+    margin-top: 2rem;
+    margin-left:1rem;
+}
