@@ -9,14 +9,19 @@
 {% endblock %}
 
 {% block content %}
-
-<div class="container bg-light detail">
+<div class="d-flex flex-column">
+    <div class="container detail bg-light">
         <h5>{{ post.subject}}</h5><br>
         {{ post.date }}<br>
         By:{{ post.name }}<br>
         Email:{{ post.email }}<br>
         {{ post.content }}<br>
         <span class="delete"><a class="btn btn-primary" role="button" href="{% url 'delete' p=post.id %}">Delete Post</a></span>
+    </div>
+    <div class="container bg-light detail">
+        <a href="{% url 'comment' p=post.id %}"><h5>Comments</h5></a>
+        {% block comment %}{% endblock %}
+    </div>
 </div>
 
 {% endblock %}

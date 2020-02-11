@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
-from .models import post
+from .models import post,comment
 from django.contrib import messages
 import datetime
 
@@ -44,5 +44,22 @@ def done(request,k):
     else:
         return HttpResponse("Method not allowed")
 
+def commentpage(request,p):
+    posst=get_object_or_404(post,id=p)
+    series =  comment.objects.filter(value=p)
+    return render(request,'posts/comment.html',{'post':posst,'series':series})
 
+def add_comment(request,p):
+    if request.method=='POST':
+        com = comment()
+        com.name = request.POST['name']
+        com.email = request.POST['email']
+        com.content = request.POST['content']
+        com.value = p
+        com.save()
+        posst=get_object_or_404(post,id=p)
+        series =  comment.objects.filter(value=p)
+        return render(request,'posts/comment.html',{'post':posst,'series':series})
+    else:
+        return HttpResponse("Method not allowed")
 

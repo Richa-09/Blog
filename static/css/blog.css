@@ -9,6 +9,8 @@
     word-wrap: break-word;
     border: solid black 0.5px;
     border-radius: 1.2rem;
+    margin-bottom: -2.5rem;
+
 }
 
 .delete{
@@ -16,4 +18,8 @@
     padding-top: 1rem;
     padding-bottom:1rem;
     padding-right: 1rem;
+}
+
+.yes{
+    float: right;
 }

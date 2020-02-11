@@ -1,0 +1,36 @@
+{% extends 'posts/blog.html' %}
+
+{% block comment %}
+
+{% for s in series %}
+<div class="container bg-light shadow-lg mb-5 blog">
+    <div class="row align-items-center">
+             <div class="col">
+                 <span class="person">{{ s.date }}</span><br>
+                 <span class="person">By:{{ s.name }}</span><br>
+                 <span class="person">Email:{{ s.email }}</span><br>
+                 {{ s.content }}<br>
+            </div>
+    </div>
+</div>
+{% endfor %}
+<div class="container">
+<form action="{% url 'add_comment' p=post.id %}" method="POST">
+    {% csrf_token %}
+    <h3>Write your comment here</h3>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="name" class="form-control" id="name" name="name" placeholder="Full Name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="email address">
+      </div>
+   <div class="form-group">  
+     <label for="content">Write your comment here</label>
+     <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+   </div>
+   <button type="submit" class="btn btn-info yes">Comment</button>
+ </form>
+</div>
+{% endblock %}

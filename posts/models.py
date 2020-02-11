@@ -7,3 +7,10 @@ class post(models.Model):
     subject = models.TextField()
     content = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+
+class comment(models.Model):
+    value = models.IntegerField()
+    name = models.CharField(max_length=30)
+    email = models.EmailField()
+    content = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
